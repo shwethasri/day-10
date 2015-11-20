@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- html page for tabbed layout -->
+<html>
+  <head>
+    <title> tabbed layout </title>
+    <link rel="stylesheet" type="text/css" href ="tabbedLayout.css">
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+    $(document).ready(function() {
+		$('.tabs > li > a').click(function(event){
+    event.preventDefault();
+		var activetab = $('.tabs > li.show > a').attr('href');
+		var activednav = $('.tabs > li.show');
+		activednav.removeClass('show');
+		$(this).parents('li').addClass('show');
+		activetab.removeClass('show');
+		activetab.addClass('hide');
+		var targettab = $(this).attr('href');
+		targettab.removeClass('hide');
+		targettab.addClass('show');
+	     });
+	  });
+    </script>
+  </head>
+  <body>
+    <div id="tablayout">
+      <h1 id="heading"> Tabbed Layout </h1>
+      <ul id="tabs">
+        <li class="tab show"><a id="homepage" class="link" href="#home"> <span> Home </span> </a></li>
+        <li class="tab"><a id="servicespage" class="link" href="#services"><span> Services </span></a></li>
+        <li class="tab"><a id="productspage" class="link" href="#products"><span> Products </span></a></li>
+        <li class="tab"><a id="registerpage" class="link" href="#register"><span> Register </span></a></li>
+        <li class="tab"><a id="contactuspage" class="link" href="#contactUs"><span> Contact us </span></a></li>
+    </ul>
+    </div>
+    <div id="pages">
+      <div id="home" class="show">
+        <p> home page</p>
+      </div>
+      <div id="services" class="hide">
+        <p> services page</p>
+      </div>
+      <div id="products" class="hide">
+        <p> products page</p>
+      </div>
+      <div id="register" class="hide">
+        <p> register page</p>
+      </div>
+      <div id="contactus" class="hide">
+        <p> contactus page</p>
+      </div>
+    </div>
+  </body>
+</html>
