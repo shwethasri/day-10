@@ -4,51 +4,41 @@
   <head>
     <title> tabbed layout </title>
     <link rel="stylesheet" type="text/css" href ="tabbedLayout.css">
-    <script src="jquery-1.11.3.js"></script>
-    <script>
-    $(document).ready(function() {
-		$('.tabs > li > a').click(function(event){
-    event.preventDefault();
-		var activetab = $('.tabs > li.show > a').attr('href');
-		var activednav = $('.tabs > li.show');
-		activednav.removeClass('show');
-		$(this).parents('li').addClass('show');
-		activetab.removeClass('show');
-		activetab.addClass('hide');
-		var targettab = $(this).attr('href');
-		targettab.removeClass('hide');
-		targettab.addClass('show');
-	     });
-	  });
-    </script>
   </head>
   <body>
+    <span id="home"></span>
+    <span id="services"> </span>
+    <span id="products"> </span>
+    <span id="register"></span>
+    <span id="contactUs"> </span>
     <div id="tablayout">
       <h1 id="heading"> Tabbed Layout </h1>
-      <ul id="tabs">
-        <li class="tab show"><a id="homepage" class="link" href="#home"> <span> Home </span> </a></li>
-        <li class="tab"><a id="servicespage" class="link" href="#services"><span> Services </span></a></li>
-        <li class="tab"><a id="productspage" class="link" href="#products"><span> Products </span></a></li>
-        <li class="tab"><a id="registerpage" class="link" href="#register"><span> Register </span></a></li>
-        <li class="tab"><a id="contactuspage" class="link" href="#contactUs"><span> Contact us </span></a></li>
-    </ul>
-    </div>
-    <div id="pages">
-      <div id="home" class="show">
-        <p> home page</p>
-      </div>
-      <div id="services" class="hide">
-        <p> services page</p>
-      </div>
-      <div id="products" class="hide">
-        <p> products page</p>
-      </div>
-      <div id="register" class="hide">
-        <p> register page</p>
-      </div>
-      <div id="contactus" class="hide">
-        <p> contactus page</p>
-      </div>
-    </div>
+      <!--<div id="tabs">-->
+        <ul>
+          <li><a href="#home"> Home </a></li>
+          <li><a href="#services"> Services </a></li>
+          <li><a href="#products"> Products </a></li>
+          <li><a href="#register"> Register </a></li>
+          <li><a href="#contactUs"> Contact Us </a></li>
+        </ul>
+      <!--</div>-->
+      <!--<div id="content">-->
+          <div class="homepage">
+            <p> home page</p>
+          </div>
+          <div class="servicespage">
+            <p> services page</p>
+          </div>
+          <div class="productspage">
+            <p> products page</p>
+          </div>
+          <div class="registerpage">
+            <p> register page</p>
+          </div>
+          <div class="contactuspage">
+            <p> contactus page</p>
+          </div>
+        </div>
+      <!--</div>-->
   </body>
 </html>
